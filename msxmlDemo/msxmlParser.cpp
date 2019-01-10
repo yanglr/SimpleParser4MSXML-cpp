@@ -1,9 +1,10 @@
-#include <msxml6.h>
+#include <msxml6.h>   // Including MSXML latest version
 #include <atlbase.h>
-#include "atlstr.h"  // 含有CString, CStringW和CW2A
-#include <iostream>  // 包含wcout函数
-#include <string>    // 包含 c_str()函数, wcout
-#include "comutil.h" // 包含_bstr_t
+#include "atlstr.h"  // Including CString, CStringW and CW2A
+#include <iostream>  // Including wcout method
+#include <string>    // Including c_str()method, wcout
+#include <direct.h>
+#include "comutil.h" // Including _bstr_t
 using namespace std;
 
 const wchar_t *src = L""
@@ -80,9 +81,9 @@ int main()
 		}
 
 		CComPtr<IXMLDOMNodeList> pNodeList;
-		pRootElement->get_childNodes(&pNodeList); // Child node list
+		hr = pRootElement->get_childNodes(&pNodeList); // Child node list
 		long nLen;
-		pNodeList->get_length(&nLen);    // Child node list
+		hr = pNodeList->get_length(&nLen);    // Child node list
 		for (long i = 0; i != nLen; ++i) // Traverse
 		{
 			CComPtr<IXMLDOMNode> pNode;
@@ -97,7 +98,8 @@ int main()
 				wcout << "Name of node " << (i + 1) << ": " << bstrText << endl;
 
 				CString cstring(ssName);
-				// To display a CStringW correctly, use wcout and cast cstring to (LPCTSTR), an easier way to display wide character strings.
+				// To display a CStringW correctly, use wcout and cast cstring to (LPCTSTR), an easier way to 
+				// display wide character strings.
 				wcout << (LPCTSTR)cstring << endl;
 
 				// CW2A converts the string in ccombstr to a multi-byte string in printstr, used for display output.
@@ -112,8 +114,8 @@ int main()
 		CComPtr<IXMLDOMNode> newImageNode;
 		string imageType = "jpeg";
 		char buffer[MAX_PATH];
-		GetCurrentDirectory(MAX_PATH, buffer);  //  Get Current Directory
-		string path(buffer); // Copy content of char*, generate a string
+		_getcwd(buffer, MAX_PATH);    //  Get Current Directory
+		string path(buffer);          // Copy content of char*, generate a string
 		string imagePath = path + "\\com.jpg";
 
 		xmlDocData->createElement(CComBSTR(L"Image"), &imageElement);
@@ -140,7 +142,7 @@ int main()
 	}
 
 	// Release() - that gets done automatically, also can manually do for each opened node or elements.
-	// iXMLDoc.Release();
+	iXMLDoc.Release();
 
 	// Stop COM
 	CoUninitialize();
