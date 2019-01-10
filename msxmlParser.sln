@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "msxmlDemo", "msxmlDemo\msxmlDemo.vcxproj", "{BF5DE574-5B2C-42FB-AE95-14A1B8B460FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF5DE574-5B2C-42FB-AE95-14A1B8B460FB}.Debug|x64.ActiveCfg = Debug|x64
+		{BF5DE574-5B2C-42FB-AE95-14A1B8B460FB}.Debug|x64.Build.0 = Debug|x64
+		{BF5DE574-5B2C-42FB-AE95-14A1B8B460FB}.Debug|x86.ActiveCfg = Debug|Win32
+		{BF5DE574-5B2C-42FB-AE95-14A1B8B460FB}.Debug|x86.Build.0 = Debug|Win32
+		{BF5DE574-5B2C-42FB-AE95-14A1B8B460FB}.Release|x64.ActiveCfg = Release|x64
+		{BF5DE574-5B2C-42FB-AE95-14A1B8B460FB}.Release|x64.Build.0 = Release|x64
+		{BF5DE574-5B2C-42FB-AE95-14A1B8B460FB}.Release|x86.ActiveCfg = Release|Win32
+		{BF5DE574-5B2C-42FB-AE95-14A1B8B460FB}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9387DB48-440F-4361-B15D-F11A9A2E9997}
+	EndGlobalSection
+EndGlobal
